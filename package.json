@@ -16,6 +16,7 @@
     "joi": "^17.13.3",
     "major_project": "file:",
     "method-override": "^3.0.0",
-    "mongoose": "^8.9.2"
+    "mongoose": "^8.9.2",
+    "nodemon": "^3.1.9"
   }
 }

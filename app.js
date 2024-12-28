@@ -23,7 +23,7 @@ app.listen(8080, () => {
   console.log("Server is listening to port 8080");
 });
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = "mongodb://127.0.0.1:27017/gunanivivek";
 
 main()
   .then(() => {
@@ -83,7 +83,8 @@ app.get(
   "/listings/:id",
   wrapAsync(async (req, res) => {
     let { id } = req.params;
-    const listing = await Listing.findById(id);
+    const listing = await Listing.findById(id).populate("reviews");
+    console.log("data",listing);
     res.render("listings/show.ejs", { listing });
   })
 );
